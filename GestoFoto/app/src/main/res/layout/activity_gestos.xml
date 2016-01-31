@@ -1,0 +1,68 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#2d9336">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Introduce el gesto"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:id="@+id/textView2"
+        android:layout_above="@+id/textView3"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="(con precisión mayor de 4.7)"
+        android:textSize="15dp"
+        android:textColor="#ffffff"
+        android:id="@+id/textView3"
+        android:layout_above="@+id/salida"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/salida"
+        android:layout_width="236dp"
+        android:text="Gesto - Precisión\n"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_height="60dp"
+        android:layout_above="@+id/gestures"
+        android:layout_alignLeft="@+id/gestures"
+        android:layout_alignStart="@+id/gestures"
+        android:layout_marginTop="10dp" />
+
+    <ImageView
+        android:layout_width="69dp"
+        android:layout_height="69dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/gestofoto"
+        android:layout_gravity="right"
+        android:layout_alignTop="@+id/salida"
+        android:layout_alignRight="@+id/gestures"
+        android:layout_alignEnd="@+id/gestures" />
+
+    <android.gesture.GestureOverlayView
+        android:id="@+id/gestures"
+        android:layout_width="330dp"
+        android:layout_height="330dp"
+
+        android:gestureStrokeType="multiple"
+        android:gravity="center"
+        android:fadeOffset="800"
+        android:background="#bda7e998"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center" />
+
+</RelativeLayout>
