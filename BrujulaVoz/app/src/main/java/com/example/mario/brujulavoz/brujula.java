@@ -15,19 +15,16 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-/**
- * Created by Mario on 09/02/2016.
- */
+
 public class brujula extends Activity implements SensorEventListener{
 
     private ImageView image;
 
     private RelativeLayout layout;
 
-    // record the compass picture angle turned
+    // Variable utilizada para rotar la imagen de la brújula
     private float currentDegree = 0f;
 
-    // device sensor manager
     private SensorManager mSensorManager;
 
     TextView tvHeading,mensaje;
@@ -48,20 +45,20 @@ public class brujula extends Activity implements SensorEventListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitivity_brujula);
 
+        // Obtenemos el intent del reconocimiento con los valores que envia (punto cardinal y error)
         i=getIntent();
         punto= i.getFloatExtra("punto_cardinal",0);
         error=i.getIntExtra("error",5);
 
-        // our compass image
+        // imagen de la brujula
         image = (ImageView) findViewById(R.id.imageViewCompass);
 
         layout = (RelativeLayout) findViewById(R.id.layout);
 
-        // TextView that will tell the user what degree is he heading
         tvHeading = (TextView) findViewById(R.id.tvHeading);
         mensaje = (TextView) findViewById(R.id.mensaje);
 
-        // initialize your android device sensor capabilities
+        // Inicililizar el sensor
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
     }
 
@@ -78,18 +75,24 @@ public class brujula extends Activity implements SensorEventListener{
     protected void onPause() {
         super.onPause();
 
-        // to stop the listener and save battery
+        // Parar el listener
         mSensorManager.unregisterListener(this);
     }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
+
+
         mensaje.setVisibility(View.INVISIBLE);
-        // get the angle around the z-axis rotated
+
+        // Obtener el ángulo
         float degree = Math.round(event.values[0]);
 
         tvHeading.setText("Grados: " + Float.toString(degree));
 
+        // Si el angulo está entre el punto cardinal que buscamos y el margen de error, el color de fondo de la aplicación
+        // cambia a verde, si el ángulo está próximo al margen de error el color de fondo cambia a naranja (indicando que nos
+        // acercamos al punto
         if(punto==NORTE){
 
             if((degree >= 360-error && degree<=360) || (degree>=0 && degree<= NORTE + error)) {
@@ -113,7 +116,8 @@ public class brujula extends Activity implements SensorEventListener{
                 layout.setBackgroundColor(Color.rgb(60, 140, 255));
 
         }
-        // create a rotation animation (reverse turn degree degrees)
+
+        // Crear y lanzar una animación para rotar la imagen que hará de brújula.
         RotateAnimation ra = new RotateAnimation(
                 currentDegree,
                 -degree,
@@ -121,13 +125,13 @@ public class brujula extends Activity implements SensorEventListener{
                 Animation.RELATIVE_TO_SELF,
                 0.5f);
 
-        // how long the animation will take place
+
         ra.setDuration(210);
 
-        // set the animation after the end of the reservation status
+
         ra.setFillAfter(true);
 
-        // Start the animation
+
         image.startAnimation(ra);
         currentDegree = -degree;
 

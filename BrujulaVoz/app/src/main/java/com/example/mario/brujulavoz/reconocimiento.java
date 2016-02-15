@@ -1,20 +1,19 @@
 package com.example.mario.brujulavoz;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.speech.RecognizerIntent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class reconocimiento extends AppCompatActivity {
+public class reconocimiento extends Activity {
 
     private Button iniciar;
     private static int REQUEST_CODE = 123;
@@ -54,18 +53,26 @@ public class reconocimiento extends AppCompatActivity {
 
         if(requestCode == REQUEST_CODE && resultCode == RESULT_OK){
 
+            // Obtenemos las cadenas que se han escuchado. La primera será la que se ajusta con mayor probabilidad a lo eschuchado.
             ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 
+            // Separamos las palabras de la cadena escuchada.
             String [ ] palabras = matches.get(0).toString().split(" ");
 
             List aux=Arrays.asList(palabras);
 
+            // Si la cadena tiene dos palabras, la primera es un punto cardinal y la segunda un numero
             if(aux.size()==2 && getParametrosBrujula(palabras[0]) && esNumero(palabras[1])){
+
+                // Creamos y lanzamos una nueva actividad a la que le pasamos el punto cardinal y el error.
                 Intent i = new Intent(this,brujula.class);
                 i.putExtra("punto_cardinal",punto);
                 i.putExtra("error",Integer.parseInt(palabras[1]));
                 startActivity(i);
+
             }else {
+
+                // Si ha habido algun problema, mostramos un mensaje de error con la cadena incorrecta para poder rectificar.
                 Toast toast = Toast.makeText(this, "Error al escuchar: " +matches.get(0), Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                 toast.show();
@@ -74,6 +81,7 @@ public class reconocimiento extends AppCompatActivity {
         }
     }
 
+    // Comprobamos que el parametro p es un punto cardinal (se prueba con diferentes formatos) y se le da un valor a la variable asociada al punto cardinal
     private boolean getParametrosBrujula(String p){
 
         switch (p) {
@@ -104,6 +112,7 @@ public class reconocimiento extends AppCompatActivity {
         return true;
     }
 
+    //Comprobamos que el string es un número y que es positivo y menor que 100 (para que el error no sea demasiado grande)
     private static boolean esNumero(String s){
         int n;
         try{
