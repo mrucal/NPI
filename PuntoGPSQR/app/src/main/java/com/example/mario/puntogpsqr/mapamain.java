@@ -65,6 +65,7 @@ public class mapamain extends Activity implements OnClickListener{
         }
     }
 
+    //Obtiene la posición actual
     private Location getMyLocation() {
         LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         Location myLocation = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
@@ -108,6 +109,8 @@ public class mapamain extends Activity implements OnClickListener{
 
         i=getIntent();
         latlon = i.getStringExtra("latlonstring");
+
+        // Añadir un marker con la posicion goal obtenida en el codigo qr y crear una ruta
         if(latlon!=null) {
             goal = getLatLon(latlon);
             if (antgoal == null)
@@ -123,21 +126,22 @@ public class mapamain extends Activity implements OnClickListener{
             setMarker(goal, "GOAL", "", BitmapDescriptorFactory.HUE_AZURE);
         }
 
-        /*if(ruta==null)
-            ruta=new Ruta(goal);*/
-
-
+        // Dibujar el camino que se ha seguido hasta llegar al GOAL
         mMap.setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
 
             public void onMyLocationChange(Location pos) {
                 if(ruta!=null) {
                     ruta.POLILINEA.color(Color.RED);
-                    if (!ruta.goal) {
 
+                    // Si no hemos alcanzdo el goal
+                    if (!ruta.goal) {
+                        // Si la posición actual no esta cercano al GOAL añadimos la posicion actual a la ruta
                         if (!ruta.Goal(pos))
                             ruta.POLILINEA.add(new LatLng(pos.getLatitude(), pos.getLongitude()));
+                        // Dibujmos la ura en rojo
                         drawPolilyne(ruta.POLILINEA);
                     } else {
+                        // Si se ha alcanzdo el goal dibujamos el camino que hemos seguido en verde
                         ruta.POLILINEA.color(Color.BLUE);
                         drawPolilyne(ruta.POLILINEA);
                     }
@@ -146,6 +150,7 @@ public class mapamain extends Activity implements OnClickListener{
         });
     }
 
+    // Obtiene el valor numérico de la latitud y longitud del string en el formato indicado en el guión
     private LatLng getLatLon(String s){
         LatLng latlng;
         double lat, lon;

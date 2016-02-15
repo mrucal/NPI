@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".qrmain"
-    android:background="#332f83">
+    android:background="#3c8dff">
 
     <Button android:id="@+id/scan_button"
         android:layout_width="200dp"

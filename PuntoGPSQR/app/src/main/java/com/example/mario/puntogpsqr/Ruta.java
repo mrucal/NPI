@@ -5,7 +5,7 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import android.location.Location;
 
 
-public class Ruta {   //Nueva clase Posiciones
+public class Ruta {
 
     private double minLat  = 0;
     private double minLon  = 0;
@@ -29,6 +29,7 @@ public class Ruta {   //Nueva clase Posiciones
         goal=false;
     }
 
+    // Devuelve true si la posición l está cercana al GOAL
     public boolean Goal(Location l){
         double lat = l.getLatitude();
         double lon = l.getLongitude();

@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\PuntoGPSQR\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jar="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\NPI Apps\PuntoGPSQR\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\PuntoGPSQR\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_3c058a2f6207900c4bcbb4c1dbe60dc8dd884b1c.jar" />
+        <dex dex="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\NPI Apps\PuntoGPSQR\app\build\intermediates\pre-dexed\release\internal_impl-23.1.1_a940d25f9d673f75bf9f64773c4836a936ddcdb2.jar" />
+    </item>
+    <item
+        jar="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\NPI Apps\PuntoGPSQR\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.1.71\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0f6d5c1ef2e982c3b7858408e3df389cf5d202da">
+        <dex dex="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\NPI Apps\PuntoGPSQR\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-6.1.71_548e63150ea07a28d7102bc3076be5ce45a56d76.jar" />
+    </item>
+    <item
+        jar="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\NPI Apps\PuntoGPSQR\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\NPI Apps\PuntoGPSQR\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-23.1.1_0520ff14061ab76913590eb228cdfbe3d33ed56d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\NPI Apps\PuntoGPSQR\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\NPI Apps\PuntoGPSQR\app\build\intermediates\pre-dexed\release\com.android.support-support-v4-23.1.1_144989c0763f533aa03d84287077a8d5f7e7228b.jar" />
     </item>
     <item
         jar="C:\Users\Mario\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\PuntoGPSQR\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1_964c7be22abbea81dd84d034d57dbbb20e42d927.jar" />
-    </item>
-    <item
-        jar="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\PuntoGPSQR\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\PuntoGPSQR\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.1.1_d9bd98163e03bb323f14f830c631e590d6f10ae8.jar" />
-    </item>
-    <item
-        jar="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\PuntoGPSQR\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.1.71\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="0f6d5c1ef2e982c3b7858408e3df389cf5d202da">
-        <dex dex="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\PuntoGPSQR\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-6.1.71_020f4f5e3b4068918270cd9b533fcd737b75e4fc.jar" />
-    </item>
-    <item
-        jar="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\PuntoGPSQR\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\PuntoGPSQR\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.1.1_67b7df7627628d14608b64c2552f1ddcb24a6b9c.jar" />
+        <dex dex="C:\Users\Mario\Dropbox\ETSIIT\Android NPI\NPI Apps\PuntoGPSQR\app\build\intermediates\pre-dexed\release\support-annotations-23.1.1_964c7be22abbea81dd84d034d57dbbb20e42d927.jar" />
     </item>
 
 </items>
