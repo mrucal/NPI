@@ -1,4 +1,4 @@
-package com.example.mario.gestos;
+package com.example.mario.GestoFoto;
 
 import org.junit.Test;
 

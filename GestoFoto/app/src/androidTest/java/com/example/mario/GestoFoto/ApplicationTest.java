@@ -1,4 +1,4 @@
-package com.example.mario.gestos;
+package com.example.mario.GestoFoto;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

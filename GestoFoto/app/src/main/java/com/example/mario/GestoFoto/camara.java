@@ -1,4 +1,4 @@
-package com.example.mario.gestos;
+package com.example.mario.GestoFoto;
 
 import android.content.pm.ActivityInfo;
 import android.os.Handler;
@@ -14,11 +14,9 @@ import android.hardware.Camera.PictureCallback;
 import android.hardware.Camera.ShutterCallback;
 
 import android.provider.MediaStore.Images;
-import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,7 +49,7 @@ public class camara extends Activity implements SurfaceHolder.Callback{
         tview = (TextView) findViewById(R.id.textView);
         tview.setText("Waiting...");
 
-        //Capturar la foto tras esperar 3 segundos
+        //Iniciar el método mMyRunnable tras una espera de 3 segundos
         Handler myHandler = new Handler();
         myHandler.postDelayed(mMyRunnable, 3000);
 
@@ -61,9 +59,7 @@ public class camara extends Activity implements SurfaceHolder.Callback{
     {
 
         public void run() {
-            Camera.Parameters params = myCamera.getParameters();
-            //params.set("rotation", 90);
-            myCamera.setParameters(params);
+            // Tomar una foto
             myCamera.takePicture(myShutterCallback, myPictureCallback, myJpeg);
 
         }
@@ -107,7 +103,7 @@ public class camara extends Activity implements SurfaceHolder.Callback{
             setResult(RESULT_OK, mIntent);
         }else{
             Toast.makeText(this, "La imagen no ha podido ser guardada", Toast.LENGTH_SHORT).show();
-        } //finish();
+        }
     }
 
     @Override

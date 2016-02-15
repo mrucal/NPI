@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#2d9336">
+    android:background="#3c8dff">
 
     <TextView
         android:layout_width="fill_parent"
@@ -58,7 +58,7 @@
         android:gestureStrokeType="multiple"
         android:gravity="center"
         android:fadeOffset="800"
-        android:background="#bda7e998"
+        android:background="#1076cd"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
